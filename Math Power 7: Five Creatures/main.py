@@ -31,21 +31,21 @@ def rule_2(creatures: Creatures) -> bool:
 
 
 def rule_3(creatures: Creatures) -> bool:
-    if creatures["blackcat"][1] != "attic" or creatures["bat"] != "firstfloor":
+    if creatures["blackcat"][1] != "secondfloor" or creatures["bat"][1] != "firstfloor":
         return False
     return True
 
 
 def rule_4(creatures: Creatures) -> bool:
     for i in creatures.items():
-        if i[1] == "attic" and i[0] == "hum":
+        if i[1][1] == "attic" and i[1][0] == "hum":
             return True
     return False
 
 
 def rule_5(creatures: Creatures) -> bool:
     for i in creatures.items():
-        if i[1] == "firstfloor" and i[0] != "whistle":
+        if i[1][1] == "firstfloor" and i[1][0] != "whistle":
             return True
     return False
 
@@ -77,9 +77,12 @@ def main():
                 print(display_result(creatures))
             else:
                 tries += 1
-                if "rule_1" not in failed:
-                    print(f"[red]Fail #{tries} {', '.join(failed)}[/]")
-                    print(creatures)
+                exclude = ["rule_4"]
+                if all([i not in failed for i in exclude]):
+                    pass
+                    #print(f"[red]Fail #{tries} {', '.join(failed)}[/]")
+                    
+                    
 
 
 if __name__ == '__main__':

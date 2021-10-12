@@ -13,13 +13,16 @@ Creatures = Dict[
     Literal["goblin", "witch", "ghost", "blackcat", "bat"],
     Tuple[
         Literal["scream", "hum", "screech", "whistle", "giggle"],
-        Literal["attic", "chimney", "firstfloor", "secondfloor", "basement"]
-    ]
+        Literal["attic", "chimney", "firstfloor", "secondfloor", "basement"],
+    ],
 ]
 
 
 def rule_1(creatures: Creatures) -> bool:
-    if creatures["goblin"][1] != "chimney" or creatures["goblin"][0] in ["giggle", "whistle"]:
+    if creatures["goblin"][1] != "chimney" or creatures["goblin"][0] in [
+        "giggle",
+        "whistle",
+    ]:
         return False
     return True
 
@@ -79,11 +82,8 @@ def main():
                 tries += 1
                 exclude = ["rule_4"]
                 if all([i not in failed for i in exclude]):
-                    pass
-                    #print(f"[red]Fail #{tries} {', '.join(failed)}[/]")
-                    
-                    
+                    pass  # print(f"[red]Fail #{tries} {', '.join(failed)}[/]")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "math powers"
+version = "0.1.0"
+description = ""
+authors = ["Ethan Henry <79533577+ethansocal@users.noreply.github.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+rich = "^10.12.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -80,7 +80,7 @@ def main():
             if len(failed) == 0:
                 successes.append(display_result(creatures))
             else:
-                exclude =["rule_4"]
+                exclude = ["rule_4"]
                 if all([i not in failed for i in exclude]):
                     pass  # print(f"[red]Fail #{tries} {', '.join(failed)}[/]")
             tries += 1

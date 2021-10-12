@@ -6,13 +6,13 @@ from rich.panel import Panel
 from rich.table import Table
 
 CREATURES = ["Goblin", "Witch", "Ghost", "Black Cat", "Bat"]
-SOUNDS = ["Scream", "Hum", "Screech", "whistle", "Giggle"]
+SOUNDS = ["Scream", "Hum", "Screech", "Whistle", "Giggle"]
 PLACES = ["Attic", "Chimney", "First Floor", "Second Floor", "Basement"]
 
 Creatures = Dict[
     Literal["Goblin", "Witch", "Ghost", "Black Cat", "Bat"],
     Tuple[
-        Literal["Scream", "Hum", "Screech", "whistle", "Giggle"],
+        Literal["Scream", "Hum", "Screech", "Whistle", "Giggle"],
         Literal["Attic", "Chimney", "First Floor", "Second Floor", "Basement"],
     ],
 ]
@@ -21,7 +21,7 @@ Creatures = Dict[
 def rule_1(creatures: Creatures) -> bool:
     if creatures["Goblin"][1] != "Chimney" or creatures["Goblin"][0] in [
         "Giggle",
-        "whistle",
+        "Whistle",
     ]:
         return False
     return True
@@ -48,7 +48,7 @@ def rule_4(creatures: Creatures) -> bool:
 
 def rule_5(creatures: Creatures) -> bool:
     for i in creatures.items():
-        if i[1][1] == "First Floor" and i[1][0] != "whistle":
+        if i[1][1] == "First Floor" and i[1][0] != "Whistle":
             return True
     return False
 

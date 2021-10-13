@@ -77,13 +77,13 @@ def main():
             for rule in RULES:
                 if rule(creatures) is False:
                     failed.append(rule.__name__)
+            tries += 1
             if len(failed) == 0:
                 successes.append(display_result(creatures))
             else:
-                exclude = ["rule_4"]
+                exclude = []
                 if all([i not in failed for i in exclude]):
-                    pass  # print(f"[red]Fail #{tries} {', '.join(failed)}[/]")
-            tries += 1
+                    print(f"[red]Fail #{tries} {', '.join(failed)}[/]")
     for i in successes:
         print(i)
     print(f"{len(successes)}/{tries} solutions found")

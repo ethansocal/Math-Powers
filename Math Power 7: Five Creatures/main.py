@@ -83,7 +83,7 @@ def main():
                 print(f"[green]Success #{tries}[/]")
             else:
                 exclude = []
-                if all([i not in failed for i in exclude]):
+                if all(i not in failed for i in exclude):
                     print(f"[red]Fail #{tries} {', '.join(failed)}[/]")
     for i in successes:
         print(i)

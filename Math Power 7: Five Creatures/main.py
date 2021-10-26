@@ -80,6 +80,7 @@ def main():
             tries += 1
             if len(failed) == 0:
                 successes.append(display_result(creatures))
+                print(f"[green]Success #{tries}[/]")
             else:
                 exclude = []
                 if all([i not in failed for i in exclude]):

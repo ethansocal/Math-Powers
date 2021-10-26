@@ -9,7 +9,6 @@ def main(
     csv_file: Optional[PathLike] = "raw_data.csv",
     plot: bool = True,
     locker_amount: int = 500,
-    return_pattern: bool = False,
 ) -> None:
     """Solve the math extra credit problem with brute forcing."""
     locker_amount += 1

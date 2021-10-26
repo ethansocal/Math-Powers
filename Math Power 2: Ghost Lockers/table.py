@@ -1,7 +1,7 @@
+"""Solve the math extra credit problem with brute forcing."""
 from rich.console import Console
 from rich.table import Table
 
-"""Solve the math extra credit problem with brute forcing."""
 LOCKER_AMOUNT = 50  # Number of lockers
 # Create a table of lockers and whether they are open or not
 lockers: dict[int, bool] = {}
